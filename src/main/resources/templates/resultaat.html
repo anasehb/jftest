@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Tafels van Vermenigvuldiging - Resultaat</title>
+</head>
+<body>
+<h1>Resultaat</h1>
+<div th:if="${resultaat != null}">
+  <h2>Tafel van Vermenigvuldiging voor ${param.getal}:</h2>
+  <ul>
+    <li th:each="getal : ${resultaat}" th:text="${getal}"></li>
+  </ul>
+</div>
+<div th:unless="${resultaat != null}">
+  <!-- Geef hier een foutbericht weer als er een fout is opgetreden -->
+</div>
+<a href="/index">Terug naar invoer</a>
+</body>
+</html>
